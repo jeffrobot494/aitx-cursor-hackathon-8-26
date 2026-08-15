@@ -1,0 +1,64 @@
+{
+  "assignments": [
+    {
+      "agentId": "agent_maren",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "I have heard nothing unusual today.",
+      "reasoning": "No witnesses and no location means no originating account can travel along her ties."
+    },
+    {
+      "agentId": "agent_osric",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "The garrison has received no report of any such matter.",
+      "reasoning": "Empty witness list and empty location give official channels and his ties nothing to carry."
+    },
+    {
+      "agentId": "agent_tam",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "Nothing's happened that I've seen or been told.",
+      "reasoning": "He was not present and nobody who knows of the event exists to tell him."
+    },
+    {
+      "agentId": "agent_ilva",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "I have received no word of any occurrence.",
+      "reasoning": "The chapel is neither near an unnamed place nor connected to any witness of this event."
+    },
+    {
+      "agentId": "agent_bell",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "The woods are quiet. I know of no event.",
+      "reasoning": "Bell has no ties and no proximity; with no witnesses anywhere, isolation is complete."
+    }
+  ],
+  "summary": "With no witnesses, no location, and no originating account, the event reached nobody.",
+  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about an event and how.\n",
+  "model": "grok-4.6",
+  "effort": "high",
+  "ms": 17934
+}

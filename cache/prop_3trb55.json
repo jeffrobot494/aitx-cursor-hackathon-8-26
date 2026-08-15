@@ -1,0 +1,64 @@
+{
+  "assignments": [
+    {
+      "agentId": "agent_maren",
+      "knows": true,
+      "route": "witnessed",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0.97,
+      "belief": "A stranger in a good cloak took a room from me and paid in capital coin, then asked which road the couriers ride.",
+      "reasoning": "She was present at the inn and handled the guest herself, so the account is first-hand and unaltered."
+    },
+    {
+      "agentId": "agent_osric",
+      "knows": true,
+      "route": "told directly by Maren",
+      "hopCount": 1,
+      "delayHours": 2,
+      "distortion": "sanitised",
+      "confidence": 0.82,
+      "belief": "Maren reports a well-cloaked traveller at the inn paid in capital coin and inquired after the courier road; I will treat it as a matter for watchfulness.",
+      "reasoning": "Maren has a tie to the captain and would send word of a stranger asking after courier routes; the report arrives trimmed of colour and framed as a security note, and the event does not touch his forbidden topic."
+    },
+    {
+      "agentId": "agent_tam",
+      "knows": true,
+      "route": "told directly by Maren",
+      "hopCount": 1,
+      "delayHours": 1,
+      "distortion": "vague",
+      "confidence": 0.64,
+      "belief": "We've a rich stranger in a fine cloak staying on; Maren said he paid with city money and was asking after the roads.",
+      "reasoning": "Tam works the inn stables and Maren would mention the new guest to him, but the courier-road question blurs into a general asking after the roads."
+    },
+    {
+      "agentId": "agent_ilva",
+      "knows": true,
+      "route": "rumor",
+      "hopCount": 2,
+      "delayHours": 8,
+      "distortion": "embellished",
+      "confidence": 0.41,
+      "belief": "A lord from the capital has taken the inn's best room and is hunting for the couriers' secret road, coin flashing like a king's mark.",
+      "reasoning": "She is on the hill with no proximity, so the tale reaches her later along the Maren tie as village gossip and grows a rank and a secret road it never had."
+    },
+    {
+      "agentId": "agent_bell",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "The woods are as they were; I have heard of no travellers and no inns.",
+      "reasoning": "Bell has no ties and lives half a day away in the deep woods, so no channel carries the inn's business to him."
+    }
+  ],
+  "summary": "Maren saw it at the inn, told Tam at once and Osric soon after, while a swollen rumour reached Ilva hours later and Bell never heard a word.",
+  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about the event and how.\n",
+  "model": "grok-4.6",
+  "effort": "high",
+  "ms": 61537
+}

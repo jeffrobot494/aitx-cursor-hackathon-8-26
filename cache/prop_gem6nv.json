@@ -1,0 +1,64 @@
+{
+  "assignments": [
+    {
+      "agentId": "agent_maren",
+      "knows": true,
+      "route": "told directly by Tam",
+      "hopCount": 1,
+      "delayHours": 2,
+      "distortion": "embellished",
+      "confidence": 0.8,
+      "belief": "Tam came running in from the north road at dawn: a courier's horse dead in the dirt, saddlebags slashed to ribbons, and the king's own dispatches stolen by bandits waiting in the ditch.",
+      "reasoning": "Tam is her stable boy and only tie, so he brought the story straight to the inn; she keeps a public house and cannot help colouring it with bandits and the king."
+    },
+    {
+      "agentId": "agent_osric",
+      "knows": true,
+      "route": "told directly by Maren",
+      "hopCount": 2,
+      "delayHours": 5,
+      "distortion": "inverted",
+      "confidence": 0.55,
+      "belief": "Maren says a courier was struck down on the north road at dawn and his horse bolted with the saddlebags still on it; I have a missing rider to account for, not a cut pouch.",
+      "reasoning": "He hears it thirdhand from Maren along their tie, so a key detail inverted in transit, and he will not admit any failure to patrol."
+    },
+    {
+      "agentId": "agent_tam",
+      "knows": true,
+      "route": "witnessed",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0.95,
+      "belief": "I found that courier's horse dead on the north road this morning, saddlebags cut open and the dispatch pouch gone.",
+      "reasoning": "He was there at dawn and saw the horse and the cut bags himself, so the account is clean."
+    },
+    {
+      "agentId": "agent_ilva",
+      "knows": true,
+      "route": "told directly by Maren",
+      "hopCount": 2,
+      "delayHours": 7,
+      "distortion": "inverted",
+      "confidence": 0.45,
+      "belief": "Maren told me they found a riderless horse on the north road and the dispatch pouch lying open in the mud with the letters scattered, as if the Lord meant the words to be read.",
+      "reasoning": "She is tied to Maren but sits up on the hill, so the news arrives late and thirdhand, and a key detail has flipped from pouch-gone to pouch-found."
+    },
+    {
+      "agentId": "agent_bell",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "The woods have been still. No word has reached me from the village or the road.",
+      "reasoning": "He has no ties and lives half a day off in the deep woods, so an event on the north road never finds a channel to him."
+    }
+  ],
+  "summary": "Tam carried the dawn find to Maren, who passed a coloured version to Osric and Ilva along her ties; both thirdhand accounts inverted a different detail, and Bell never heard a thing.",
+  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about the event, how they learned it, distortions, etc.\n",
+  "model": "grok-4.6",
+  "effort": "high",
+  "ms": 113671
+}
