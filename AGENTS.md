@@ -24,7 +24,7 @@ Do not start new features after 1:45 unless the demo does not run.
 
 ## Our project (source of truth)
 
-Two-person team: **Brian + partner**. Update this block when the idea is locked. Agents must follow it and must **not** invent a different product.
+Two-person team: **Brian + Bo**. Update this block when the idea is locked. Agents must follow it and must **not** invent a different product.
 
 - **Path** (pick one): Cool factor / Business use case / Agentic orchestration
 - **Project name:**
@@ -34,7 +34,7 @@ Two-person team: **Brian + partner**. Update this block when the idea is locked.
 - **How Grok 4.6 is load-bearing in what we ship:**
 - **Demo script (30–60s happy path):**
 
-If this block is still empty, ask Brian for the idea before generating a product. Scaffolding-only is fine; a surprise app is not.
+If this block is still empty, ask Brian or Bo for the idea before generating a product. Scaffolding-only is fine; a surprise app is not.
 
 ## What judges score (100)
 
