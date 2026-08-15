@@ -8,8 +8,8 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "Nothing out of the ordinary has reached the inn today.",
-      "reasoning": "No witnesses, no location, and no social channel carried this non-event to the inn."
+      "belief": "Nothing unusual has reached the inn; I know of no event worth mentioning.",
+      "reasoning": "Empty location and empty witnesses mean no proximity and no originating speaker, so the account never entered Maren's channels."
     },
     {
       "agentId": "agent_osric",
@@ -19,8 +19,8 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "The garrison has had no report of any incident.",
-      "reasoning": "He was not present, there were no witnesses, and no official or personal channel delivered the event."
+      "belief": "The garrison has no report of any incident.",
+      "reasoning": "No official source, no witnesses, and no location, so nothing reached the captain by report or by tie."
     },
     {
       "agentId": "agent_tam",
@@ -30,8 +30,8 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "The stables have been quiet; I have not heard of anything happening.",
-      "reasoning": "No proximity and his only tie, Maren, also learned nothing, so the event never reached him."
+      "belief": "It's been quiet in the stables; nobody's told me a thing.",
+      "reasoning": "Tam only hears news through Maren, and no account ever started, so he learned nothing."
     },
     {
       "agentId": "agent_ilva",
@@ -41,8 +41,8 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "The chapel has received no word of any occurrence.",
-      "reasoning": "She was not a witness and her ties to Maren and Osric carried nothing because they themselves know nothing."
+      "belief": "The chapel has been still; I have heard of no happening.",
+      "reasoning": "Sister Ilva was not present and no tie carried an originating report, so she remains unaware."
     },
     {
       "agentId": "agent_bell",
@@ -52,13 +52,13 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "The woods are as they always are; I know of no event.",
-      "reasoning": "Isolated hermit with no ties and no proximity learns nothing, which is the correct outcome."
+      "belief": "The woods are as they always are; I have seen and heard no one.",
+      "reasoning": "Bell has no ties and no proximity, so isolation correctly yields no knowledge."
     }
   ],
-  "summary": "The unseeded test event had no witnesses, no location, and no channels, so it reached nobody.",
-  "reasoning": "The user wants me to act as a continuity engine for a simulated world, doing epistemic routing. I need to decide which agents know about an event and how.\n",
+  "summary": "With no witnesses, no location, and no originating speaker, the event never entered the social graph and nobody learned of it.",
+  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about an event and how.\n",
   "model": "grok-4.6",
   "effort": "high",
-  "ms": 20047
+  "ms": 27685
 }

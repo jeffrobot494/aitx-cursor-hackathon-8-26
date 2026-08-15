@@ -108,6 +108,10 @@ export function createApp() {
           text: req.body.text,
           location: req.body.location || '',
           witnesses: req.body.witnesses || [],
+          // NOT 'world'. worldEventCount() counts world events to decide which
+          // pooled event fires next, so defaulting this to 'world' made every
+          // ad-hoc propagation silently burn one of the six curated events.
+          kind: 'custom',
           effort: req.body.effort,
         },
         send,
