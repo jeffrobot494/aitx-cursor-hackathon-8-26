@@ -1,0 +1,64 @@
+{
+  "assignments": [
+    {
+      "agentId": "agent_maren",
+      "knows": true,
+      "route": "overheard",
+      "hopCount": 1,
+      "delayHours": 3,
+      "distortion": "embellished",
+      "confidence": 0.7,
+      "belief": "The garrison stuffed the gate with twice the usual men and ran off a whole train of carts after nightfall — the lads were drinking hard and tight-lipped, so it must be worse than they're saying.",
+      "reasoning": "Off-watch soldiers drank at her inn a few hours after dark and talked; she was not at the gate, so two carts became a train and their silence became impending trouble."
+    },
+    {
+      "agentId": "agent_osric",
+      "knows": true,
+      "route": "witnessed",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0.99,
+      "belief": "I doubled the watch at the village gate and had the men turn two carts back after dark. No one is owed a reason.",
+      "reasoning": "He was present and gave the order; the event does not touch his forbidden topic, and he is suppressing any explanation."
+    },
+    {
+      "agentId": "agent_tam",
+      "knows": true,
+      "route": "told directly by Maren",
+      "hopCount": 2,
+      "delayHours": 5,
+      "distortion": "vague",
+      "confidence": 0.45,
+      "belief": "Maren says the gate's full of soldiers tonight and nobody's getting a cart through. We didn't get any late horses, that's all I know.",
+      "reasoning": "His only channel is Maren, who passed him a thinned-out version after the inn talk; he lost the count of carts and the fact it was a doubling, not a seal."
+    },
+    {
+      "agentId": "agent_ilva",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "I kept the chapel through the night and have heard no word from the village of any change at the gate.",
+      "reasoning": "She was on the hill after dark; Osric is not announcing the watch, and neither he nor Maren climbed to the chapel before morning."
+    },
+    {
+      "agentId": "agent_bell",
+      "knows": false,
+      "route": "none",
+      "hopCount": 0,
+      "delayHours": 0,
+      "distortion": "none",
+      "confidence": 0,
+      "belief": "The woods have been still. I know nothing of gates or garrisons.",
+      "reasoning": "No ties and no proximity: half a day into the woods, so the event cannot reach him."
+    }
+  ],
+  "summary": "Osric kept the order quiet; it leaked only as inn-gossip from his men to Maren and then a thinner scrap to Tam, while the hill and the woods heard nothing.",
+  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about the event, how they learned it, distortions, etc.\n",
+  "model": "grok-4.6",
+  "effort": "high",
+  "ms": 68923
+}
