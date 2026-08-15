@@ -64,9 +64,10 @@ state of a world.
 | `lib/env.js` | Six-line `.env` parser (avoids a dotenv dependency) |
 | `app.js` | Express routes. Exports `createApp()`, does not listen |
 | `server.js` | Listens. Split from `app.js` so tests mount in-process |
-| `public/index.html` | Entire frontend. Three screens, vanilla JS, no build step |
+| `public/index.html` | Company site. Vanilla HTML, no build step |
+| `public/app/index.html` | Demo. Three screens, vanilla JS, no build step |
 | `seed.js` | The demo village |
-| `smoke.mjs` | 21 assertions. **Run before every commit and before recording** |
+| `smoke.mjs` | 23 assertions. **Run before every commit and before recording** |
 | `scores.mjs` | Prints raw retrieval scores. Diagnostic only |
 
 ## 5. Data model
@@ -110,8 +111,8 @@ Streaming endpoints emit newline-delimited JSON:
 npm install
 cp .env.example .env        # XAI_API_KEY, OPENAI_API_KEY
 npm run seed                # build the village
-npm start                   # → http://localhost:3000
-npm run smoke               # 21 assertions, must be green
+npm start                   # → http://localhost:3000  (product)  /app/  (demo)
+npm run smoke               # 23 assertions, must be green
 ```
 
 Boots with **no keys at all** (stub embeddings + cached propagations) so a dead
@@ -119,8 +120,8 @@ venue wifi cannot end the demo. Keep it that way.
 
 ## 8. ⚠️ What is verified and what is not
 
-**Verified headlessly:** all 21 smoke assertions, every route, both offline
-fallbacks, the three screens, retrieval plumbing, CRUD, the village clock.
+**Verified headlessly:** all 23 smoke assertions, every route, both offline
+fallbacks, the company site, the three demo screens, retrieval plumbing, CRUD, the village clock.
 
 **NOT verified — assume these are wrong until someone checks:**
 
@@ -129,7 +130,7 @@ fallbacks, the three screens, retrieval plumbing, CRUD, the village clock.
 | **No code here has ever called the real xAI API** | `lib/grok.js` | Add the key, click "Advance the day" once |
 | The JSON shape `grok-4-6` returns may not match the parser | `parseJson` in `lib/grok.js`, `propagate.js` | Same click. Failure will surface as a parse error |
 | The reasoning stream field name | `chatStream` accepts both `reasoning_content` and `reasoning` | If the trace pane stays empty but results appear, this is why |
-| Nobody has looked at the UI in a browser | `public/index.html` | Open it |
+| Nobody has looked at the UI in a browser | `public/index.html`, `public/app/index.html` | Open `/` then `/app/` |
 
 **MEASURED AND TRUE:** the hash-stub embeddings cannot support this product.
 Bell scored an unrelated belief at **0.361** against a question she should know
@@ -185,13 +186,13 @@ is more than an hour left.**
 
 ## 12. Rules for whoever picks this up
 
-1. **Run `npm run smoke` before and after every change.** 21 green or you broke something.
+1. **Run `npm run smoke` before and after every change.** 23 green or you broke something.
 2. **Do not rebuild what exists.** The backend is done. If something seems missing, grep before writing.
 3. **Do not weaken the two-model split** to make anything faster or simpler.
 4. **Do not make Bell knowledgeable.**
 5. **Do not add dependencies or a build step.**
 6. **Coordinate on files.** The two hot files are `lib/propagate.js` (prompt
-   tuning) and `public/index.html` (UI). Two agents in either at once will collide.
+   tuning) and `public/app/index.html` (demo UI). Two agents in either at once will collide.
 7. **Prompt changes are the highest-leverage and highest-risk edits.** The
    propagation prompt in `lib/propagate.js` has never met the real model. Expect
    it to need a pass. Change one thing at a time and re-run a real propagation.
@@ -200,14 +201,15 @@ is more than an hour left.**
 
 ## 13. Demo script — do not break these steps
 
-1. Village. Five faces, quiet feed, 2 baseline beliefs each.
-2. Advance the day → Grok 4.6 reasons live in the feed panel.
-3. Portraits update with uneven badges.
-4. Click Tam → vivid, firsthand, `witnessed`.
-5. Click Osric → sanitised, `official report`, will not admit the patrol gap.
-6. Click Bell → "I wouldn't know anything about that." **The money shot.**
-7. Dashboard → create an NPC, advance again, watch them get included.
-8. Show `/v1/npc/:id/chat`. One endpoint. That is what a studio buys.
+1. Company site (`/`). One-liner, the `/v1` endpoint, click through to `/app/`.
+2. Village. Five faces, quiet feed, 2 baseline beliefs each.
+3. Advance the day → Grok 4.6 reasons live in the feed panel.
+4. Portraits update with uneven badges.
+5. Click Tam → vivid, firsthand, `witnessed`.
+6. Click Osric → sanitised, `official report`, will not admit the patrol gap.
+7. Click Bell → "I wouldn't know anything about that." **The money shot.**
+8. Dashboard → create an NPC, advance again, watch them get included.
+9. Show `/v1/npc/:id/chat`. One endpoint. That is what a studio buys.
 
 Optional: rerun at `reasoning_effort: low` and show routing quality collapse.
 That is the live ablation proving Grok 4.6 is doing real work.

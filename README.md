@@ -31,7 +31,7 @@ the epistemic state of the world.
 npm install
 cp .env.example .env      # add XAI_API_KEY, and OPENAI_API_KEY — see below
 npm run seed              # builds the demo village
-npm start                 # → http://localhost:3000
+npm start                 # → http://localhost:3000  (product)  /app/  (demo)
 npm run smoke             # end-to-end check, 17 assertions
 ```
 
@@ -61,7 +61,8 @@ A false match outscoring a true one means no threshold separates them. Set
 | `lib/embed.js` | The provider seam. OpenAI or stub, nothing else knows |
 | `lib/store.js` | Agents, beliefs, events, propagation cache |
 | `app.js` / `server.js` | Routes / listener, split so tests mount in-process |
-| `public/index.html` | Dashboard — roster, event injector + live reasoning, chat |
+| `public/index.html` | Company site — what a studio buys |
+| `public/app/index.html` | Demo — village, conversation, dashboard |
 | `seed.js` | The village |
 | `smoke.mjs` | Run this before you record anything |
 
@@ -81,7 +82,8 @@ Bell is the test. A naive RAG NPC system gives her the news.
 
 | Screen | What it is |
 |---|---|
-| **Village** | Portrait grid of the cast + the news feed. "Advance the day ▸" fires the next world event and streams Grok 4.6 routing it. Badge on each portrait = how much they have learned. Click a face to talk |
+| **Company site (`/`)** | What a studio buys. One-liner, the `/v1` endpoint, CTA into the demo |
+| **Village (`/app/`)** | Portrait grid of the cast + the news feed. "Advance the day ▸" fires the next world event and streams Grok 4.6 routing it. Badge on each portrait = how much they have learned. Click a face to talk |
 | **Conversation** | The NPC's face, a chat box, and a sidebar of everything they know — each belief tagged with route, confidence, distortion, and **why Grok decided they know it**. Beliefs used in the last reply light up |
 | **Dashboard** | Create and delete NPCs, add and remove facts, set `forbidden` topics |
 
@@ -104,19 +106,20 @@ it. Roughly 30 lines, plus a rule about not re-propagating every "hello".
 
 ## Demo script
 
-1. **Village.** Five faces, a quiet feed. Every NPC has 2 baseline beliefs.
-2. **Advance the day.** Watch Grok 4.6 reason live in the feed panel. This is
+1. **Company site (`/`).** One-liner, the `/v1/npc/:id/chat` endpoint, then click through to the demo.
+2. **Village (`/app/`).** Five faces, a quiet feed. Every NPC has 2 baseline beliefs.
+3. **Advance the day.** Watch Grok 4.6 reason live in the feed panel. This is
    the shot that answers "is it load-bearing".
-3. The portraits update — different badges, uneven spread.
-4. **Click Tam.** Vivid, firsthand, misses the significance. Sidebar shows
+4. The portraits update — different badges, uneven spread.
+5. **Click Tam.** Vivid, firsthand, misses the significance. Sidebar shows
    `witnessed`, confidence 0.95.
-5. **Click Osric.** Sanitised. Sidebar shows `official report`. He will not
+6. **Click Osric.** Sanitised. Sidebar shows `official report`. He will not
    admit the patrol gap — it is in his `forbidden` list.
-6. **Click Bell.** "I wouldn't know anything about that." Sidebar is empty of
+7. **Click Bell.** "I wouldn't know anything about that." Sidebar is empty of
    the event. *No tie, no channel, no knowledge.* This is the money shot.
-7. **Dashboard.** Create an NPC in ten seconds, advance the day again, watch
+8. **Dashboard.** Create an NPC in ten seconds, advance the day again, watch
    them get included.
-8. **Show `/v1/npc/:id/chat`.** One endpoint. That is what a studio buys.
+9. **Show `/v1/npc/:id/chat`.** One endpoint. That is what a studio buys.
 
 Optional ablation: rerun at `reasoning_effort: low` and show routing collapse.
 

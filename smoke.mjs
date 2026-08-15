@@ -112,9 +112,15 @@ try {
   ok('agent deletion works', !after.agents.some((a) => a.id === made.id));
 
   // --- static -------------------------------------------------------------
-  const page = await fetch(B + '/');
+  const site = await fetch(B + '/');
+  const siteHtml = await site.text();
+  ok('company site serves at /', site.status === 200, `${siteHtml.length} bytes`);
+  ok('company site sells the endpoint',
+     siteHtml.includes('/v1/npc') && /NPC knowledge/i.test(siteHtml));
+
+  const page = await fetch(B + '/app/');
   const html = await page.text();
-  ok('dashboard serves', page.status === 200, `${html.length} bytes`);
+  ok('demo serves at /app/', page.status === 200, `${html.length} bytes`);
   ok('all three screens present',
      html.includes('id="vView"') && html.includes('id="cView"') && html.includes('id="dView"'));
 

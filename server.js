@@ -14,6 +14,8 @@ const server = createApp().listen(PORT, () => {
   // it, and a server killed before flush looks like one that never started.
   process.stdout.write(
     `\n  Hearsay running → http://localhost:${PORT}\n` +
+    `  product    : http://localhost:${PORT}/\n` +
+    `  demo       : http://localhost:${PORT}/app/\n` +
     `  write path : ${MODELS.reason} (effort=${process.env.REASONING_EFFORT || 'high'})\n` +
     `  read path  : ${MODELS.fast}\n` +
     `  embeddings : ${embedProvider()}\n` +
