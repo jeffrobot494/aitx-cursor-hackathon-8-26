@@ -8,7 +8,7 @@ import express from 'express';
 import * as store from './lib/store.js';
 import { propagate } from './lib/propagate.js';
 import { ask } from './lib/chat.js';
-import { MODELS, hasKey } from './lib/grok.js';
+import { MODELS, hasKey, provider } from './lib/grok.js';
 import { embedProvider, embed } from './lib/embed.js';
 import { nextEvent, poolSize } from './lib/events.js';
 
@@ -23,9 +23,14 @@ export function createApp() {
 
   app.get('/api/status', (req, res) => {
     res.json({
-      xai: hasKey(),
+      // `xai` is the write path's liveness and keeps its original meaning:
+      // false means tick/propagate can only replay a warmed cache entry.
+      xai: hasKey('reason'),
       reasonModel: MODELS.reason,
+      reasonProvider: provider('reason').name,
       fastModel: MODELS.fast,
+      fastProvider: provider('fast').name,
+      fastLive: hasKey('fast'),
       effort: process.env.REASONING_EFFORT || 'high',
       embeddings: embedProvider(),
     });

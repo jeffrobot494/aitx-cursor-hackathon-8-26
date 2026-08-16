@@ -7,9 +7,9 @@
       "hopCount": 0,
       "delayHours": 0,
       "distortion": "none",
-      "confidence": 1,
-      "belief": "A stranger in a good cloak took a room from me and paid in capital coin, then asked which road the couriers ride.",
-      "reasoning": "She was behind the desk at the inn and handled both the payment and the question, so her account is exact."
+      "confidence": 0.98,
+      "belief": "A stranger in a good cloak took a room from me, paid in capital coin, and asked which road the couriers ride.",
+      "reasoning": "She was the only witness, at her own inn, so the account is complete and unfiltered."
     },
     {
       "agentId": "agent_osric",
@@ -17,10 +17,10 @@
       "route": "told directly by Maren",
       "hopCount": 1,
       "delayHours": 3,
-      "distortion": "none",
-      "confidence": 0.85,
-      "belief": "Maren sent word that a well-cloaked stranger paid in capital coin for a room and asked which road the couriers ride.",
-      "reasoning": "Maren is tied to him and would carry a security-relevant question about courier roads to the garrison captain the same evening, keeping the facts intact."
+      "distortion": "sanitised",
+      "confidence": 0.86,
+      "belief": "Maren reports a well-cloaked traveller paying capital coin and inquiring after the courier road; I will have him watched.",
+      "reasoning": "Their tie is the channel and the courier question is a matter for the captain, so she walked it to the garrison house as a tidy report with the colour stripped out."
     },
     {
       "agentId": "agent_tam",
@@ -28,21 +28,21 @@
       "route": "told directly by Maren",
       "hopCount": 1,
       "delayHours": 1,
-      "distortion": "vague",
-      "confidence": 0.7,
-      "belief": "Maren says a fancy stranger took a room and paid her in those big city coins; I never heard what he was after.",
-      "reasoning": "He works her stables and she told him there was a paying guest, but she left out the courier-road question as none of a stable boy's concern."
+      "distortion": "embellished",
+      "confidence": 0.72,
+      "belief": "We've a rich city man in the good cloak upstairs — Maren says his purse was heavy with capital gold and he was sniffing after the courier road like he owned it.",
+      "reasoning": "He works the inn stables and Maren talks while she works, so the news arrived fast and grew a little in a boy's mouth."
     },
     {
       "agentId": "agent_ilva",
       "knows": true,
       "route": "told directly by Maren",
       "hopCount": 1,
-      "delayHours": 20,
+      "delayHours": 10,
       "distortion": "embellished",
-      "confidence": 0.55,
-      "belief": "Maren told me a lordly stranger in a rich cloak paid her in gold from the capital and pressed her hard for the courier road — I fear he means the post no good.",
-      "reasoning": "The chapel is on the hill and not nearby, but her tie to Maren carries village gossip by the next day, and the telling grew extra gold, urgency, and menace."
+      "confidence": 0.58,
+      "belief": "Maren has a gentleman from the capital at the inn who came all that way to hunt the courier routes — perhaps he is some official, or something less honest.",
+      "reasoning": "The chapel-hill tie carries gossip, but it waited until they next spoke and the stranger had already become a purposeful man from the capital."
     },
     {
       "agentId": "agent_bell",
@@ -52,13 +52,13 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "The woods are as they were. I have heard nothing of inns or strangers.",
-      "reasoning": "Bell has no ties and lives half a day away in the deep woods, so there is no channel and no proximity by which this could reach him."
+      "belief": "The woods have been quiet; I know nothing of inns or travellers.",
+      "reasoning": "No ties and a half-day of forest from the village means there is no channel at all."
     }
   ],
-  "summary": "Maren witnessed the stranger and passed a full account to Osric and a thinned one to Tam, later embroidered the tale for Sister Ilva, while Bell in the woods heard nothing.",
-  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about the event and how.\n",
+  "summary": "The news left Maren's mouth along her three ties within the day — fast and swollen at the stables, tidied for the captain, embroidered by evening on the hill — and never reached the woods.",
+  "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about the event, how they learned it, distortions, etc.\n",
   "model": "grok-4.6",
   "effort": "high",
-  "ms": 88816
+  "ms": 80537
 }

@@ -23,6 +23,9 @@
   header{position:sticky;top:0;z-index:5;background:rgba(11,13,16,.88);
          backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   header .wrap{display:flex;align-items:center;gap:18px;height:56px}
+  .credit-bar{border-bottom:1px solid var(--line);background:rgba(255,255,255,.04)}
+  .credit-bar .wrap{height:auto;justify-content:center;padding:9px 22px;text-align:center}
+  .credit-bar p{margin:0;color:#fff;font-weight:600;font-size:13px;letter-spacing:.2px}
   .brand{font-weight:650;letter-spacing:.3px;color:var(--fg);font-size:15px}
   .brand em{color:var(--dimmer);font-weight:400;font-style:normal;margin-left:8px;font-size:12px}
   header nav{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:13px}
@@ -88,6 +91,11 @@
 <body>
 
 <header>
+  <div class="credit-bar">
+    <div class="wrap">
+      <p>Created for AITX Cursor Grok Hackathon August 2026 by Bo Banducci and Brian Cordozza</p>
+    </div>
+  </div>
   <div class="wrap">
     <a class="brand" href="/">Hearsay <em>NPC knowledge, as a service</em></a>
     <nav>

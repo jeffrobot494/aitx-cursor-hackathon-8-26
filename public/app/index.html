@@ -341,6 +341,9 @@ $('#tick').onclick = async () => {
       method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ effort: $('#eff').value }),
     });
+    // An error response is JSON, not NDJSON — readNdjson would find no `type`
+    // field and the button would just go quiet. Surface it instead.
+    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || `HTTP ${r.status}`);
     await readNdjson(r, m => {
       if (m.type === 'event')  status.textContent = 'Event: ' + m.event.text;
       if (m.type === 'status') status.textContent = m.text;
@@ -372,7 +375,9 @@ async function readNdjson(res, on) {
 
 async function resetWorld() {
   if (!confirm('Wipe the world? You will need to re-seed from the terminal.')) return;
-  await fetch('/api/reset', { method: 'POST' }); await refresh(); go('village');
+  const r = await fetch('/api/reset', { method: 'POST' });
+  if (!r.ok) { alert((await r.json().catch(() => ({}))).error || `Reset failed (${r.status})`); return; }
+  await refresh(); go('village');
 }
 
 /* ---------------- conversation ---------------- */
