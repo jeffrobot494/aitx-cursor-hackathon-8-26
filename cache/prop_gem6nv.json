@@ -5,22 +5,22 @@
       "knows": true,
       "route": "told directly by Tam",
       "hopCount": 1,
-      "delayHours": 2,
-      "distortion": "vague",
+      "delayHours": 1,
+      "distortion": "embellished",
       "confidence": 0.8,
-      "belief": "Tam came running in from the north road saying he found a courier's horse dead at dawn, bags slashed and some official pouch missing. I haven't seen it myself.",
-      "reasoning": "Tam's only tie is Maren and he works her stables, so he reported to her first; a rattled stable boy lost a few specifics in the telling."
+      "belief": "Tam came running in at dawn saying he found a courier's horse dead on the north road, cut up something awful, saddlebags slashed to ribbons and the king's pouch stolen by highwaymen bold as you like, and so close to the village.",
+      "reasoning": "Tam's only tie is Maren and he would run straight back to the inn; secondhand from a shaken stable boy picks up colour and blame."
     },
     {
       "agentId": "agent_osric",
       "knows": true,
       "route": "told directly by Maren",
       "hopCount": 2,
-      "delayHours": 5,
+      "delayHours": 3,
       "distortion": "sanitised",
-      "confidence": 0.75,
-      "belief": "Maren brought word a courier's horse was found dead on the north road and the dispatch pouch taken. Bandits, most like; I will look into it.",
-      "reasoning": "A stolen dispatch is garrison business so Maren carried it to him, but the account arrives sanitised and he will not frame it as a failed patrol."
+      "confidence": 0.7,
+      "belief": "Maren reports a courier's horse was found dead on the north road and the dispatch pouch is missing. I will look into the theft.",
+      "reasoning": "Maren would take a missing dispatch to the garrison captain the same morning and strip it of gossip; he files the facts and does not touch the unpatrolable road."
     },
     {
       "agentId": "agent_tam",
@@ -30,19 +30,19 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0.95,
-      "belief": "I found a courier's horse dead on the north road this morning, saddlebags cut open and the dispatch pouch gone.",
-      "reasoning": "He was physically present at the carcass and saw the cut bags and missing pouch himself."
+      "belief": "I found that courier's horse dead on the north road at first light. Someone had sliced the saddlebags open and the dispatch pouch was gone.",
+      "reasoning": "He is the listed witness and was physically on the north road at dawn, so he has the clean account."
     },
     {
       "agentId": "agent_ilva",
       "knows": true,
       "route": "told directly by Maren",
       "hopCount": 2,
-      "delayHours": 8,
-      "distortion": "embellished",
-      "confidence": 0.55,
-      "belief": "Maren says a courier was murdered on the north road at dawn and unholy hands tore the king's own letters from the body.",
-      "reasoning": "Maren and Ilva are tied, so the story reached the chapel later in the day and secondhand gossip turned a dead horse and missing pouch into a murdered courier and stolen royal letters."
+      "delayHours": 5,
+      "distortion": "inverted",
+      "confidence": 0.45,
+      "belief": "Maren told me they found a courier murdered on the north road at dawn, and his horse and the sealed dispatches both gone.",
+      "reasoning": "Maren would share village news with the chapel keeper later in the day; by the second hop a key detail has flipped from dead horse to dead rider."
     },
     {
       "agentId": "agent_bell",
@@ -52,13 +52,13 @@
       "delayHours": 0,
       "distortion": "none",
       "confidence": 0,
-      "belief": "The woods are quiet. I have not seen a soul in days.",
-      "reasoning": "Bell is isolated in the deep woods with no social ties and no proximity to the north road, so the event has no channel to reach him."
+      "belief": "I keep to the woods. I have heard nothing of horses or roads.",
+      "reasoning": "Bell has no ties and lives half a day away in the deep woods, so the news has no channel to reach him."
     }
   ],
-  "summary": "Tam carried the dawn find straight to Maren, who passed a sanitised version to Osric and an embellished one to Ilva, while Bell remained entirely cut off.",
+  "summary": "Tam carried the dawn find to Maren at the inn; she sent a stripped report to Osric and a mutated version up the hill to Ilva, while Bell in the woods learned nothing.",
   "reasoning": "The user wants me to act as a continuity engine for epistemic routing. I need to decide which agents know about the event, how they learned it, distortions, etc.\n",
   "model": "grok-4.6",
   "effort": "high",
-  "ms": 49324
+  "ms": 97047
 }
